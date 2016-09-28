@@ -1,0 +1,18 @@
+<!-- Message-->
+<span style="color: red">{{msg}}</span>
+<form class="ui large form segment">
+    <h3 class="ui header">Thêm một link</h3>
+    <div class="field">
+        <label for="title">Tiêu đề:</label> 
+        <input name="title" #newtitle>
+    </div>
+    <div class="field">
+        <label for="link">Link:</label>
+        <input name="link" #newlink>
+    </div>
+    <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">Gửi link</button>
+</form>
+<div class="ui grid posts">
+    <!--<reddit-article *ngFor="let doituongArticle of articles" [article]="doituongArticle"></reddit-article>-->
+    <reddit-article *ngFor="let doituongArticle of sortedArticles()" [article]="doituongArticle"></reddit-article>
+</div>
